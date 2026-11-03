@@ -1,17 +1,17 @@
 [
   {
-    "src": "gallery/shaggy-mane-pair.jpg",
-    "title": "Shaggy Mane Pair",
+    "src": "gallery/golden-bracket-fungus.jpg",
+    "title": "Golden Cap",
     "subtitle": "Macro \u00b7 Fungi",
     "category": "",
-    "desc": "Two shaggy manes among fallen leaves and wild strawberry foliage."
+    "desc": "A small golden fungus cap clinging to rough, mossy bark."
   },
   {
-    "src": "gallery/shaggy-mane-emerging.jpg",
-    "title": "Emerging Shaggy Mane",
+    "src": "gallery/bracket-fungus.jpg",
+    "title": "Bracket Fungus",
     "subtitle": "Macro \u00b7 Fungi",
     "category": "",
-    "desc": "A young shaggy mane standing against warm autumn leaves."
+    "desc": "Pale bracket fungi growing from the underside of a mossy log."
   },
   {
     "src": "gallery/shaggy-mane-bell.jpg",
@@ -28,101 +28,101 @@
     "desc": "A close look at the scaly cap and the darkening edge as the mushroom matures."
   },
   {
-    "src": "gallery/golden-bracket-fungus.jpg",
-    "title": "Golden Cap",
+    "src": "gallery/shaggy-mane-pair.jpg",
+    "title": "Shaggy Mane Pair",
     "subtitle": "Macro \u00b7 Fungi",
     "category": "",
-    "desc": "A small golden fungus cap clinging to rough, mossy bark."
+    "desc": "Two shaggy manes among fallen leaves and wild strawberry foliage."
   },
   {
-    "src": "gallery/bracket-fungus.jpg",
-    "title": "Bracket Fungus",
+    "src": "gallery/shaggy-mane-emerging.jpg",
+    "title": "Emerging Shaggy Mane",
     "subtitle": "Macro \u00b7 Fungi",
     "category": "",
-    "desc": "Pale bracket fungi growing from the underside of a mossy log."
+    "desc": "A young shaggy mane standing against warm autumn leaves."
   },
   {
     "src": "gallery/P1220395%20-%20Edited.jpg",
-    "title": "P1220395",
-    "subtitle": "",
+    "title": "Succulent Rosette",
+    "subtitle": "Macro \u00b7 Plants",
     "category": "",
-    "desc": ""
+    "desc": "A tight blue-green succulent rosette with spiralling, pointed leaves."
   },
   {
     "src": "gallery/P1220360%20-%20Edited.jpg",
-    "title": "P1220360",
-    "subtitle": "",
+    "title": "Moth on a Daisy",
+    "subtitle": "Macro \u00b7 Insects",
     "category": "",
-    "desc": ""
+    "desc": "A small brown moth resting on a white fleabane daisy with a yellow centre."
   },
   {
     "src": "gallery/P1220346%20-%20Edited.jpg",
-    "title": "P1220346",
-    "subtitle": "",
+    "title": "Black-Eyed Susan Vine",
+    "subtitle": "Macro \u00b7 Flowers",
     "category": "",
-    "desc": ""
+    "desc": "A yellow flower with a dark centre, climbing among green leaves."
   },
   {
     "src": "gallery/P1220324%20-%20Edited.jpg",
-    "title": "P1220324",
-    "subtitle": "",
+    "title": "Yellow Dahlia",
+    "subtitle": "Macro \u00b7 Flowers",
     "category": "",
-    "desc": ""
+    "desc": "A golden dahlia in full bloom, with a tiny beetle sitting in the centre."
   },
   {
     "src": "gallery/P1140278%20-%20Edited.jpg",
-    "title": "P1140278",
-    "subtitle": "",
+    "title": "Caterpillar on the Move",
+    "subtitle": "Macro \u00b7 Insects",
     "category": "",
-    "desc": ""
+    "desc": "A caterpillar with an orange-striped head crawling over cracked, sunlit ground."
   },
   {
     "src": "gallery/P1140261%20-%20Edited.jpg",
-    "title": "P1140261",
-    "subtitle": "",
+    "title": "Orange Ant",
+    "subtitle": "Macro \u00b7 Insects",
     "category": "",
-    "desc": ""
+    "desc": "A bright orange ant exploring dry, sandy soil in warm sunlight."
   },
   {
     "src": "gallery/P1140196%20-%20Edited.jpg",
-    "title": "P1140196",
-    "subtitle": "",
+    "title": "Dark Pebble",
+    "subtitle": "Macro \u00b7 Textures",
     "category": "",
-    "desc": ""
+    "desc": "A smooth dark pebble resting on mossy, weathered wood."
   },
   {
     "src": "gallery/P1140088%20-%20Edited.jpg",
-    "title": "P1140088",
-    "subtitle": "",
+    "title": "Turkey Tail",
+    "subtitle": "Macro \u00b7 Fungi",
     "category": "",
-    "desc": ""
+    "desc": "Layered rings of brown, rust and cream on a cluster of turkey tail fungi."
   },
   {
     "src": "gallery/P1140077%20-%20Edited.jpg",
-    "title": "P1140077",
-    "subtitle": "",
+    "title": "Fern Fronds",
+    "subtitle": "Macro \u00b7 Plants",
     "category": "",
-    "desc": ""
+    "desc": "The fine, repeating leaflets of a bright green fern frond."
   },
   {
     "src": "gallery/P1140073%20-%20Edited.jpg",
-    "title": "P1140073",
-    "subtitle": "",
+    "title": "Fuzzy Caterpillar",
+    "subtitle": "Macro \u00b7 Insects",
     "category": "",
-    "desc": ""
+    "desc": "A bristly black caterpillar with red bands crawling across a dew-covered red leaf."
   },
   {
     "src": "gallery/P1130995%20-%20Edited.jpg",
-    "title": "P1130995",
-    "subtitle": "",
+    "title": "Frog in the Leaves",
+    "subtitle": "Macro \u00b7 Wildlife",
     "category": "",
-    "desc": ""
+    "desc": "A small brown frog sitting still among golden fallen leaves, blending in with its surroundings."
   },
   {
     "src": "gallery/P1130925%20-%20Edited.jpg",
-    "title": "P1130925",
-    "subtitle": "",
+    "title": "Blue Berries",
+    "subtitle": "Macro \u00b7 Plants",
     "category": "",
-    "desc": ""
+    "desc": "Two bright blue berries on a thin dry stem, set against a soft autumn blur."
   }
 ]
