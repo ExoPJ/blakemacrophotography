@@ -10,29 +10,33 @@
   addEventListener('resize', resize);
 
   /* ---- vines ---- */
-  function makeVine(x0, y0, dir, depth) {
+  function makeVine(x0, y0, dir, depth, len) {
     const pts = [{ x: x0, y: y0 }];
     let a = dir, x = x0, y = y0;
-    const len = 70 + Math.random() * 60 - depth * 12;
     for (let i = 0; i < len; i++) {
-      a += (Math.random() - 0.5) * 0.35 + Math.sin(i / 9 + x0) * 0.04;
+      a += (Math.random() - 0.5) * 0.22 + Math.sin(i / 11 + x0 + y0) * 0.05;
       x += Math.cos(a) * 7; y += Math.sin(a) * 7;
       pts.push({ x, y });
     }
     const leafAt = [];
     for (let i = 6; i < pts.length; i += 9 + (Math.random() * 6 | 0)) leafAt.push({ i, side: Math.random() < .5 ? 1 : -1, size: 8 + Math.random() * 9, hue: 110 + Math.random() * 40 });
-    return { pts, leafAt, grown: -Math.random() * 60, speed: 0.2 + Math.random() * 0.15, depth, children: [], spawned: false };
+    return { pts, leafAt, grown: -Math.random() * 120, speed: 0.2 + Math.random() * 0.15, depth, children: [], spawned: true };
   }
   function initVines() {
     vines = [];
-    // a few vines, evenly spaced along the bottom so they never clump
-    const n = Math.max(2, Math.round(W / 480)), slot = W / n;
+    // Start points spread almost evenly around the whole screen edge, each reaching toward the centre.
+    const per = 2 * (W + H), n = Math.max(8, Math.round(per / 340)), step = per / n, off = Math.random() * step;
+    const cx = W / 2, cy = H / 2;
     for (let i = 0; i < n; i++) {
-      const x = slot * (i + .25 + Math.random() * .5);
-      vines.push(makeVine(x, H + 10, -Math.PI / 2 + (Math.random() - .5) * .5, 0));
+      let d = (off + step * (i + (Math.random() - .5) * .3) + per) % per, x, y;
+      if (d < W) { x = d; y = -8; }
+      else if ((d -= W) < H) { x = W + 8; y = d; }
+      else if ((d -= H) < W) { x = W - d; y = H + 8; }
+      else { d -= W; x = -8; y = H - d; }
+      const dist = Math.hypot(cx - x, cy - y);
+      const dir = Math.atan2(cy - y, cx - x) + (Math.random() - .5) * .5;
+      vines.push(makeVine(x, y, dir, 0, Math.round(dist * (.35 + Math.random() * .15) / 7)));
     }
-    // one slowly creeping down from each top corner
-    vines.push(makeVine(0, -10, Math.PI / 2.4, 1), makeVine(W, -10, Math.PI - Math.PI / 2.4, 1));
   }
   function drawLeaf(x, y, ang, s, hue, alpha) {
     ctx.save(); ctx.translate(x, y); ctx.rotate(ang);
