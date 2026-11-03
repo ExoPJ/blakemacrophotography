@@ -1,24 +1,10 @@
 [
   {
-    "src": "gallery/bracket-fungus.jpg",
-    "title": "Bracket Fungus",
+    "src": "gallery/shaggy-mane-emerging.jpg",
+    "title": "Emerging Shaggy Mane",
     "subtitle": "Macro \u00b7 Fungi",
     "category": "",
-    "desc": "Pale bracket fungi growing from the underside of a mossy log."
-  },
-  {
-    "src": "gallery/shaggy-mane-bell.jpg",
-    "title": "Inky Bell",
-    "subtitle": "Macro \u00b7 Fungi",
-    "category": "",
-    "desc": "A mature shaggy mane with its cap flaring into a black, inky rim."
-  },
-  {
-    "src": "gallery/shaggy-mane-closeup.jpg",
-    "title": "Shaggy Scales",
-    "subtitle": "Macro \u00b7 Fungi",
-    "category": "",
-    "desc": "A close look at the scaly cap and the darkening edge as the mushroom matures."
+    "desc": "A young shaggy mane standing against warm autumn leaves."
   },
   {
     "src": "gallery/shaggy-mane-pair.jpg",
@@ -28,11 +14,25 @@
     "desc": "Two shaggy manes among fallen leaves and wild strawberry foliage."
   },
   {
-    "src": "gallery/shaggy-mane-emerging.jpg",
-    "title": "Emerging Shaggy Mane",
+    "src": "gallery/shaggy-mane-closeup.jpg",
+    "title": "Shaggy Scales",
     "subtitle": "Macro \u00b7 Fungi",
     "category": "",
-    "desc": "A young shaggy mane standing against warm autumn leaves."
+    "desc": "A close look at the scaly cap and the darkening edge as the mushroom matures."
+  },
+  {
+    "src": "gallery/shaggy-mane-bell.jpg",
+    "title": "Inky Bell",
+    "subtitle": "Macro \u00b7 Fungi",
+    "category": "",
+    "desc": "A mature shaggy mane with its cap flaring into a black, inky rim."
+  },
+  {
+    "src": "gallery/bracket-fungus.jpg",
+    "title": "Bracket Fungus",
+    "subtitle": "Macro \u00b7 Fungi",
+    "category": "",
+    "desc": "Pale bracket fungi growing from the underside of a mossy log."
   },
   {
     "src": "gallery/P1220395%20-%20Edited.jpg",
