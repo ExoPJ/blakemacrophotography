@@ -1,26 +1,24 @@
-/* Edit this list to add photos: put image files in assets/gallery/ and add an entry. */
-const PHOTOS = [
-  { src: 'assets/gallery/m33.svg', title: 'Triangulum Galaxy', subtitle: 'Spiral galaxy', category: 'M33 · NGC 598',
-    desc: 'My first astrophotography image: M33, a spiral galaxy about 2.7 million light-years away. Stacked in Siril and finished in Lightroom.' },
-  { src: 'assets/gallery/photo2.svg', title: 'Photo Title', subtitle: 'Subtitle', category: 'Category',
-    desc: 'Add a description for this photo: where it was taken, the gear used and what you were going for.' },
-  { src: 'assets/gallery/photo3.svg', title: 'Photo Title', subtitle: 'Subtitle', category: 'Category',
-    desc: 'Add a description for this photo.' },
-  { src: 'assets/gallery/photo4.svg', title: 'Photo Title', subtitle: 'Subtitle', category: 'Category',
-    desc: 'Add a description for this photo.' },
-];
-
+/* The gallery is built from gallery.json, which a GitHub Action regenerates
+   whenever images are added to the gallery/ folder (see scripts/build-gallery.py). */
 (function () {
   const grid = document.getElementById('grid'), lb = document.getElementById('lb');
   const $ = id => document.getElementById(id);
-  let cur = 0;
-  PHOTOS.forEach((p, i) => {
-    const f = document.createElement('figure'); f.tabIndex = 0;
-    f.innerHTML = `<img src="${p.src}" alt="${p.title}" loading="lazy"><figcaption>${p.title}</figcaption>`;
-    f.addEventListener('click', () => open(i));
-    f.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); } });
-    grid.appendChild(f);
-  });
+  let PHOTOS = [], cur = 0;
+
+  fetch('gallery.json', { cache: 'no-cache' }).then(r => r.json()).then(list => {
+    PHOTOS = list;
+    if (!PHOTOS.length) $('empty').hidden = false;
+    PHOTOS.forEach((p, i) => {
+      const f = document.createElement('figure'); f.tabIndex = 0;
+      const img = document.createElement('img'); img.src = p.src; img.alt = p.title; img.loading = 'lazy';
+      const cap = document.createElement('figcaption'); cap.textContent = p.title;
+      f.append(img, cap);
+      f.addEventListener('click', () => open(i));
+      f.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); } });
+      grid.appendChild(f);
+    });
+  }).catch(() => { $('empty').textContent = 'Could not load the gallery. View this site through GitHub Pages or a local web server.'; $('empty').hidden = false; });
+
   function show(i) {
     cur = (i + PHOTOS.length) % PHOTOS.length; const p = PHOTOS[cur];
     $('lb-img').src = p.src; $('lb-img').alt = p.title;

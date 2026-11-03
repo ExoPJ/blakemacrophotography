@@ -3,7 +3,7 @@
   const page = document.body.dataset.page;
   document.querySelectorAll('nav a').forEach(a => { if (a.dataset.page === page) a.classList.add('active'); });
 
-  const defaultTheme = document.body.dataset.theme || 'night';
+  const defaultTheme = document.body.dataset.theme || 'green';
   const heads = document.querySelectorAll('.acc-head');
   heads.forEach(h => {
     h.addEventListener('click', () => {
@@ -13,7 +13,7 @@
       const season = !wasOpen && acc.dataset.season;
       if (document.body.dataset.seasonal !== undefined) {
         document.body.dataset.theme = season || defaultTheme;
-        window.Background && Background.set(season === 'fall' ? 'leaves' : season === 'green' ? 'vines' : 'none');
+        window.Background && Background.set(season === 'fall' ? 'leaves' : 'vines');
       }
     });
   });

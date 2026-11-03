@@ -20,15 +20,19 @@
       pts.push({ x, y });
     }
     const leafAt = [];
-    for (let i = 6; i < pts.length; i += 5 + (Math.random() * 4 | 0)) leafAt.push({ i, side: Math.random() < .5 ? 1 : -1, size: 8 + Math.random() * 9, hue: 110 + Math.random() * 40 });
-    return { pts, leafAt, grown: -Math.random() * 60, speed: 0.6 + Math.random() * 0.5, depth, children: [], spawned: false };
+    for (let i = 6; i < pts.length; i += 9 + (Math.random() * 6 | 0)) leafAt.push({ i, side: Math.random() < .5 ? 1 : -1, size: 8 + Math.random() * 9, hue: 110 + Math.random() * 40 });
+    return { pts, leafAt, grown: -Math.random() * 60, speed: 0.2 + Math.random() * 0.15, depth, children: [], spawned: false };
   }
   function initVines() {
     vines = [];
-    const n = Math.max(5, Math.round(W / 220));
-    for (let i = 0; i < n; i++) vines.push(makeVine(Math.random() * W, H + 10, -Math.PI / 2 + (Math.random() - .5) * .6, 0));
-    // vines creeping down from the top corners
-    vines.push(makeVine(0, -10, Math.PI / 2.4, 0), makeVine(W, -10, Math.PI - Math.PI / 2.4, 0));
+    // a few vines, evenly spaced along the bottom so they never clump
+    const n = Math.max(2, Math.round(W / 480)), slot = W / n;
+    for (let i = 0; i < n; i++) {
+      const x = slot * (i + .25 + Math.random() * .5);
+      vines.push(makeVine(x, H + 10, -Math.PI / 2 + (Math.random() - .5) * .5, 0));
+    }
+    // one slowly creeping down from each top corner
+    vines.push(makeVine(0, -10, Math.PI / 2.4, 1), makeVine(W, -10, Math.PI - Math.PI / 2.4, 1));
   }
   function drawLeaf(x, y, ang, s, hue, alpha) {
     ctx.save(); ctx.translate(x, y); ctx.rotate(ang);
@@ -41,7 +45,7 @@
   function drawVine(v) {
     const n = Math.min(v.pts.length - 1, Math.floor(v.grown));
     if (n < 1) return;
-    ctx.strokeStyle = 'rgba(70,140,80,.55)'; ctx.lineWidth = Math.max(1, 3 - v.depth); ctx.lineCap = 'round';
+    ctx.strokeStyle = 'rgba(70,140,80,.5)'; ctx.lineWidth = Math.max(1, 3 - v.depth); ctx.lineCap = 'round';
     ctx.beginPath(); ctx.moveTo(v.pts[0].x, v.pts[0].y);
     for (let i = 1; i <= n; i++) ctx.lineTo(v.pts[i].x, v.pts[i].y);
     ctx.stroke();
@@ -59,10 +63,10 @@
     (function collect(list) { for (const v of list) { all.push(v); collect(v.children); } })(vines);
     for (const v of all) {
       if (v.grown < v.pts.length - 1) v.grown += v.speed;
-      else if (!v.spawned && v.depth < 2) {
+      else if (!v.spawned && v.depth < 1) {
         v.spawned = true;
-        for (let k = 0; k < 2; k++) {
-          const i = Math.floor(v.pts.length * (.35 + k * .3)), p = v.pts[i], q = v.pts[i - 1];
+        for (let k = 0; k < 1; k++) {
+          const i = Math.floor(v.pts.length * .5), p = v.pts[i], q = v.pts[i - 1];
           const a = Math.atan2(p.y - q.y, p.x - q.x) + (k ? 1 : -1) * (.7 + Math.random() * .4);
           v.children.push(makeVine(p.x, p.y, a, v.depth + 1));
         }

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gallery · Ryan Portfolio</title>
+<title>Gallery · Blake Portfolio</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-page="gallery" data-theme="night" >
+<body data-page="gallery" data-theme="green" data-bg="vines">
 <canvas id="bg-canvas"></canvas>
 <header class="nav">
-  <a class="brand" href="index.html">Ryan <span>Portfolio</span></a>
+  <a class="brand" href="index.html">Blake <span>Portfolio</span></a>
   <nav><ul>
     <li><a data-page="home" href="index.html">Home</a></li>
     <li><a data-page="milestones" href="milestones.html">Milestones</a></li>
@@ -19,6 +19,7 @@
 </header>
 <main>
 <p class="eyebrow">Gallery</p><h1 class="page-title">Gallery</h1><p class="lede">Click any photo to enlarge it.</p>
+<p class="lede" id="empty" hidden>No photos yet. Upload images to the <code>gallery/</code> folder on GitHub and they will appear here.</p>
 <div class="grid" id="grid"></div>
 <div class="lightbox" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
   <div class="lb-stage"><button class="lb-nav lb-prev" aria-label="Previous">‹</button><img id="lb-img" alt=""><button class="lb-nav lb-next" aria-label="Next">›</button></div>
@@ -28,7 +29,7 @@
   </aside>
 </div>
 </main>
-<footer>© Ryan Portfolio</footer>
+<footer>© Blake Portfolio</footer>
 <script src="js/background.js"></script>
 <script src="js/main.js"></script>
 <script src="js/gallery.js"></script>
