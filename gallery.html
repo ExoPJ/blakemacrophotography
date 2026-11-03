@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery · Ryan Portfolio</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="gallery" data-theme="night" >
+<canvas id="bg-canvas"></canvas>
+<header class="nav">
+  <a class="brand" href="index.html">Ryan <span>Portfolio</span></a>
+  <nav><ul>
+    <li><a data-page="home" href="index.html">Home</a></li>
+    <li><a data-page="milestones" href="milestones.html">Milestones</a></li>
+    <li><a data-page="showcase" href="showcase.html">Technical Showcase</a></li>
+    <li><a data-page="gallery" href="gallery.html">Gallery</a></li>
+  </ul></nav>
+</header>
+<main>
+<p class="eyebrow">Gallery</p><h1 class="page-title">Gallery</h1><p class="lede">Click any photo to enlarge it.</p>
+<div class="grid" id="grid"></div>
+<div class="lightbox" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb-stage"><button class="lb-nav lb-prev" aria-label="Previous">‹</button><img id="lb-img" alt=""><button class="lb-nav lb-next" aria-label="Next">›</button></div>
+  <aside class="lb-side">
+    <button class="lb-close" id="lb-close" aria-label="Close">✕</button>
+    <p class="eyebrow" id="lb-eyebrow"></p><h2 id="lb-title"></h2><p class="sub" id="lb-sub"></p><p id="lb-desc"></p>
+  </aside>
+</div>
+</main>
+<footer>© Ryan Portfolio</footer>
+<script src="js/background.js"></script>
+<script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
+</body>
+</html>
